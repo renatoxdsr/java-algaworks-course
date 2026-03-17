@@ -1,0 +1,36 @@
+package algaworks;
+import java.util.Scanner;
+
+public class exercicio03Cap04 {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		//ProductPrice
+		System.out.print("Please enter the product price:");
+		Double productPrice = scanner.nextDouble();
+		
+		//Product Quantity
+		System.out.print("Please enter the product quantity: ");
+		Double productQuantity = scanner.nextDouble();
+				
+		//Subtotal = productprice * product quaantity
+		
+		Double productSubTotatal = productPrice * productQuantity;
+		Double discountPercentage = 0.0;
+		
+		Boolean desiredQuantity = productQuantity >= 10;
+		if(desiredQuantity) {
+			discountPercentage = 10.0;
+			Double discountOf10 = productSubTotatal * discountPercentage / 100;
+			
+			Double newSubTotalPrice = productSubTotatal - discountOf10;
+			
+			System.out.println("Subtotal price is: " + newSubTotalPrice + " including 10% OFF as per Quantity above 10 items which is: " + discountOf10);
+		} else {
+			System.out.println("Subtotal price is: " + productSubTotatal + " (no discount applied!)"); 
+		}
+		
+		
+	}
+}
